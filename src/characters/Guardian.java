@@ -1,5 +1,6 @@
 package characters;
 
+/*import map.Map;
 import weapon.Weapon;
 
 public class Guardian extends Character {
@@ -10,4 +11,9 @@ public class Guardian extends Character {
         super(25, (int)(Math.random()*25), 5, 9,3);
         this.weapon = weapon;
     }
-}
+
+    public void setPosition(Map map, int coordinateX, int coordinateY){
+        super.setPosition(map, coordinateX, coordinateY);
+        map.position.get(coordinateX).set(coordinateY, "G");
+    }
+}*/

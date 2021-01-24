@@ -1,5 +1,6 @@
 package characters;
 
+import map.Map;
 import weapon.Weapon;
 
 public class Player extends Character {
@@ -7,14 +8,19 @@ public class Player extends Character {
     private Weapon weapon;
 
 
-    public Player(String name, Weapon weapon) {
-        super(50, 0, 15, 7,1);
+
+    public Player(Map map, String name, Weapon weapon) {
+        super(map, 50, 0, 15, 7, 1);
         this.name = name;
-        this.weapon=weapon;
+        this.weapon = weapon;
     }
 
-    public void setOnMap(int coordinateX, int coordinateY){
-        this.coordinateX=coordinateX;
-        this.coordinateY=coordinateY;
+    public void setPosition(int coordinateX, int coordinateY, String element){
+        super.setPosition(coordinateX, coordinateX, element);
     }
+
+    /*public void setPosition(Map map, int coordinateX, int coordinateY) {
+        super.setPosition(map, coordinateX, coordinateY);
+        map.position.get(coordinateX).set(coordinateY, "P");
+    }*/
 }
