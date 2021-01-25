@@ -1,6 +1,6 @@
 package characters;
 
-import map.Map;
+/*
 
 public class Dragon extends Character{
     public Dragon() {
@@ -16,3 +16,4 @@ public class Dragon extends Character{
         super.setPosition(coordinateX, coordinateX, element);
     }
 }
+*/

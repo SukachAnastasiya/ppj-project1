@@ -12,7 +12,7 @@ public class Guardian extends Character {
         this.weapon = weapon;
     }
 
-    public void setPosition(Map map, int coordinateX, int coordinateY){
+    public void setPosition(map.Map map, int coordinateX, int coordinateY){
         super.setPosition(map, coordinateX, coordinateY);
         map.position.get(coordinateX).set(coordinateY, "G");
     }

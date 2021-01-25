@@ -7,7 +7,7 @@ public class Wolf extends Character{
         super(15, (int)(Math.random()*10), 2, 7, 2);
     }
 
-    public void setPosition(Map map, int coordinateX, int coordinateY){
+    public void setPosition(map.Map map, int coordinateX, int coordinateY){
         super.setPosition(map, coordinateX, coordinateY);
         map.position.get(coordinateX).set(coordinateY, "W");
     }
