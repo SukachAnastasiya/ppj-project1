@@ -1,7 +1,8 @@
 package elements;
 
-public class Meat extends Food{
-    public Meat(){
-        super(10);
+public class Meat extends Food {
+
+    public Meat() {
+        super(15);
     }
 }

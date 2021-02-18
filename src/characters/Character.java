@@ -1,56 +1,45 @@
 package characters;
 
-
 import map.Map;
 
-import java.util.Scanner;
-
-public abstract class Character {
-
-    protected int health;
-    protected int point;
-    public int attack;
-    protected int step;
-    protected int money;
-    protected int coordinateX;
-    protected int coordinateY;
+public class Character {
+    public Map map;
+    public int point;
+    public int health;
     public String type;
-    protected Map map;
+    protected int attack;
+    public boolean dead;
 
-    public Character(Map map, int health, int point, int money, int attack, int step, String type) {
+
+    public Character(int point, int health, Map map) {
         this.map = map;
-        this.health = health;
         this.point = point;
-        this.money = money;
+        this.health = health;
+        this.type = this.getClass().getSimpleName();
+        this.attack = 1;
+        this.dead = false;
+    }
+
+    public Character(int attack, int point, int health) {
         this.attack = attack;
-        this.step = step;
-        this.type = type;
+        this.point = point;
+        this.health = health;
+        this.type = this.getClass().getSimpleName();
     }
 
-    public void setPosition(int coordinateX, int coordinateY, String element) {
-        this.map.setPosition(coordinateX, coordinateY, element);
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
+    public boolean dead() {
+        if (this.health < 0) {
+            this.dead = true;
+            return true;
+        }
+        return false;
     }
 
-    public abstract void direction();
-
-    public void changePosition(int x, int y) {
-        this.map.changePosition(this.coordinateX, this.coordinateY, x, y, this.type);
-        this.coordinateX=x;
-        this.coordinateY=y;
-    }
-
-    public void getCoordinates() {
-        System.out.println("x: " + getCoordinateX() + "\ny: " + getCoordinateY());
-    }
-
-    public int getCoordinateX() {
-        return this.coordinateX;
-    }
-
-    public int getCoordinateY() {
-        return this.coordinateY;
+    public void getStatus() {
+        System.out.println(this.type + " has\n" +
+                this.attack + " attacks\n" +
+                this.health + " health\n" +
+                this.point + " points");
     }
 
 }
